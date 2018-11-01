@@ -1,0 +1,28 @@
+PATH
+  remote: .
+  specs:
+    smart_message-broker-rabbitmq (0.1.0)
+      bunny
+      nenv
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    amq-protocol (2.3.0)
+    bunny (2.12.0)
+      amq-protocol (~> 2.3, >= 2.3.0)
+    minitest (5.11.3)
+    nenv (0.3.0)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  minitest (~> 5.0)
+  rake (~> 10.0)
+  smart_message-broker-rabbitmq!
+
+BUNDLED WITH
+   1.17.1
