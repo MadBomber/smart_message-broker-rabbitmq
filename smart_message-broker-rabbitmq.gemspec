@@ -1,7 +1,11 @@
+# encoding: utf-8
+# frozen_string_literal: true
 
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path("../lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "smart_message/broker/rabbitmq/version"
+
+require 'smart_message'
+require_relative "./lib/smart_message/broker/rabbitmq/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "smart_message-broker-rabbitmq"
@@ -25,8 +29,17 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "bunny"
   spec.add_dependency "nenv"
+  spec.add_dependency "smart_message"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency "awesome_print"
+  spec.add_development_dependency "debug_me"
+  spec.add_development_dependency "minitest-power_assert"
+  spec.add_development_dependency "shoulda"
+
+
+
+
 end

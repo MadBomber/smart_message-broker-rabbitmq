@@ -23,6 +23,9 @@
 #       message routing key must be hidden behind the three amigos.
 
 
+# TODO: RabbutNQ/Bunny requires a MIME type to be associated with the payload.
+#       This directly relates to which serializer is used with the SmartMessage.
+
 require "bunny"
 require 'nenv'
 
@@ -103,6 +106,9 @@ module SmartMessage::Broker
 
 
     # put the encoded_message into the delievery system
+    # TODO: the message_header must have something from which the
+    #       message MIME Type can be calculated.  Maybe this is
+    #       something that has to be initialized by the chosen Serializer
     def publish(message_header, message_payload)
       # NOTE: The routing key can only be alpha-numeric with periods.
       routing_key = message_header.message_class.
